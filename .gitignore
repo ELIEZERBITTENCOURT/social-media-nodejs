@@ -1,0 +1,20 @@
+# Arquivos de compilação
+*.o
+*.out
+
+# Arquivos de log e saída de erro
+logs/
+*.log
+*.log.*
+*.error
+
+# Diretórios e arquivos específicos a serem ignorados
+build/
+node_modules/
+config.json
+
+# Ignorar todos os arquivos em um diretório, mas não o diretório em si
+public/uploads/*
+
+# Ignorar todos os arquivos .pdf em qualquer lugar do repositório
+*.pdf
