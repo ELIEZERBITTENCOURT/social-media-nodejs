@@ -53,8 +53,63 @@
         </div>
     </div>
 
+    <script type="text/template" id="userlist-template">
+        {{#users}}
+            <li data-user-id="{{id}}"><span class="glyphicon glyphicon-user">
+            </span> {{username}}</li>
+        {{/users}}
+        </script>
+  
+        <script type="text/template" id="post-template">
+        {{#post}}
+            <div class="post" data-post-id="{{id}}">
+                <div class="poster-info">
+                    <span class="poster">{{author}}</span>
+                    <span class="action">escreveu, as </span>
+                    <span class="time">{{hora}} hs</span>
+                </div>
+                <div class="post-body">{{text}}</div>
+                <div class="post-actions">
+                    <a class="glyphicon glyphicon-thumbs-up lnk-like-post" data-post-id="{{id}}"
+                    data-like="true">(0)</a>
+                    <a class="glyphicon glyphicon-comment lnk-comment" data-post-id="{{id}}">
+                    </a>
+                </div>
+  
+                <div data-post-to-comment-id="{{id}}" class="comment-form hidden">
+                    <div class="action">Deixe seu comentário</div>
+                    <textarea class="txt"></textarea>
+                    <div class="pull-right">
+                        <button class="btn btn-info btn-sm glyphicon glyphicon-ok btn-commentar">
+                        Enviar</button>
+                        <button class="btn btn-info btn-sm glyphicon glyphicon-remove
+                        lnk-cancel-comment" data-post-id="{{id}}"> Cancelar</button>
+                    </div>
+                </div>
+  
+                <div class="post-comments"></div>
+            </div>
+        {{/post}}
+        </script>
+  
+        <script type="text/template" id="comment-template">
+        {{#comment}}
+            <div class="comment" data-comment-id="{{id}}">
+                <div class="poster-info">
+                    <span class="poster">{{author}}</span>
+                    <span class="action">comentou, as</span>
+                    <span class="time">{{hora}} hs</span>
+                </div>
+                <div class="post-body">{{text}}</div>
+                <div class="post-actions">
+                    <a class="glyphicon glyphicon-thumbs-up lnk-like-comment"
+                    data-comment-id="{{id}}" data-like="true">(0)</a>
+                </div>
+            </div>
+        {{/comment}}
+        </script>
+
     <script type="module" src="./scripts/main.js"></script>
-    <script src="bower_components/requirejs/require.js" data-main="scripts/main"></script>
 </body>
 
 </html>

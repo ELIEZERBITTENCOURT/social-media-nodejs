@@ -3,7 +3,7 @@ requirejs.config({
   
     paths: {
       'jquery': '../node_modules/bootstrap/dist/jquery/jquery.min',
-      'socketio': '/Socket.IO/Socket.IO',
+      'socketio': '../node_modules/socket.io/socket.io',
       'mustache': '../node_modules/bootstrap/dist/mustache/mustache'
     },
   
